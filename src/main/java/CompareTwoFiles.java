@@ -37,27 +37,8 @@ public class CompareTwoFiles {
                 System.out.println("files are same");
 
 
-//			    FileInputStream fileInputStream = new FileInputStream("D:\\miscellanous\\compareA.txt");
-//		        InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
-//		        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 
 
-//			  String line;
-//			  int wordCount = 0;
-//			  int characterCount = 0;
-//
-//			  while ((line = bufferedReader.readLine()) != null) {
-//		            if (!line.equals("")) {
-//		            	 characterCount += line.length();
-//			                String words[] = line.split("\\s+");
-//			                wordCount += words.length;
-//
-//
-//		            }
-//
-//		        }
-//
-//			  System.out.println("Total word count = "+ wordCount);
 
 
             CountWord countword = new CountWord();
