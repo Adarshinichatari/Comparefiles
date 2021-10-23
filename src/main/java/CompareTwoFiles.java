@@ -5,12 +5,12 @@ import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 
 import org.json.simple.JSONObject;
 
 public class CompareTwoFiles {
     public static void main(String[] args)   throws IOException{
-
 
 
         try(
@@ -31,33 +31,30 @@ public class CompareTwoFiles {
 
             }
 
-            if(i != j)
+            if(i != j) {
                 System.out.println("Files are different");
-            else
+            }
+
+            else {
                 System.out.println("files are same");
 
+                CountWord countword = new CountWord();
+                countword.wordCount();
+
+
+                JSONObject jsonObject = new JSONObject();
+                jsonObject.put("No. of words", countword.getWordCount());
 
 
 
+                PrintWriter pw = new PrintWriter(new FileWriter("output.json"));
+                pw.println(jsonObject.toJSONString());
+                pw.close();
+
+                System.out.println("file has been created");
 
 
-            CountWord countword = new CountWord();
-            countword.wordCount();
-
-
-            JSONObject jsonObject = new JSONObject();
-            jsonObject.put("No. of words", countword.getWordCount());
-
-
-            FileWriter file = new FileWriter("jsonfolder\\test.json", false);
-            file.write(jsonObject.toJSONString());
-            file.close();
-
-            System.out.println("file has been created");
-
-
-
-
+            }
         }
 
     }
